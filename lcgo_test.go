@@ -110,8 +110,42 @@ func TestDemo07(t *testing.T) {
 	fmt.Println(result, string(result))
 
 	var number = 5
-	str := strconv.FormatInt(int64(number),10)
+	str := strconv.FormatInt(int64(number), 10)
 	fmt.Printf("%T,%v\n", number, number)
 	fmt.Printf("%T,%v\n", str, str)
+
+}
+
+func Test08(t *testing.T) {
+	s := "dasdadad"
+
+	// string以下标取值是uint（byte）
+	fmt.Printf("%T,%v\n", s[1], s[1])
+
+	bytes := []byte(s)
+
+	for _, value := range bytes {
+		// 以 range 迭代  value为 int32  rune
+		// int32 rune
+		temp := 'd'
+		if value == byte(temp) {
+			fmt.Println("this is d")
+			fmt.Printf("%c ,%T\n", value, value)
+			fmt.Printf("%c ,%T\n", temp, temp)
+		}
+	}
+
+}
+
+
+func Test09(t *testing.T){
+
+	var a int =2
+	var b float64=12.20
+	//c defalut is float64
+	c:=23.45
+	fmt.Println(a/2.0)
+	fmt.Println(b/2)
+	fmt.Printf("%T,%v\n", c, c)
 
 }
